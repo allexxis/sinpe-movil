@@ -20,21 +20,9 @@ const secret = 'VZx&uy8#!Ce+StDSDp]Bi3M,=.CP[n/qCKT:H62WkX;7qC-.}B';
 
 ## Inicar el proyecto
 
-- Entrar a la dirección repo→api y correr el siguiente comando.
+Entrar a la raiz del repositorio y correr el siguiente comando.
 
-  ```bash
-  npm i
-  ```
-
-- Entrar a la dirección repo→client y correr el siguiente comando.
-
-  ```bash
-  npm i
-  ```
-
-- Por  último entrar a la raiz del repositorio y correr el siguiente comando.
-
-  ```bash
-  docker-compose up -d
-  ```
+```bash
+docker-compose up -d
+```
 
