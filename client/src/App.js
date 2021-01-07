@@ -9,7 +9,7 @@ const App = () => {
                <Item
                   name="Instax Mini 90 Neo Classic"
                   price="₡100000"
-                  img="http://ecx.images-amazon.com/images/I/61%2BABMMN5zL._SL1500_.jpg"
+                  img="https://images-na.ssl-images-amazon.com/images/I/51m095zShrL._AC_SX466_.jpg"
                />
             </div>
             <div className="col no-gutters">
