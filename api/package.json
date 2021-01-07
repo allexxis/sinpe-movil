@@ -1,0 +1,16 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "NODE_ENV=production node app.js"
+  },
+  "author": "Alexis Valenciano",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "mongoose": "^5.11.8"
+  }
+}

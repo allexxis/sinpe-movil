@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import Button from './Button';
 import Input from './Input';
+import { validateTransaction } from '../services';
 
 const Checkout = () => {
    const [name, setName] = useState('');
    const [id, setId] = useState('');
 
-   const pay = (e) => {
+   const pay = async (e) => {
       e.preventDefault();
-      console.log(name, id);
+      validateTransaction(id, name);
    };
    return (
       <div className="checkout">
