@@ -7,7 +7,7 @@ const App = () => {
          <div className="row">
             <div className="col">
                <Item
-                  name="Instax Mini 90 Neo Classic"
+                  name="Iphone"
                   price="₡100000"
                   img="https://images-na.ssl-images-amazon.com/images/I/51m095zShrL._AC_SX466_.jpg"
                />
