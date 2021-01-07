@@ -7,8 +7,10 @@ mongoose.set('useCreateIndex', true);
 //Configuration
 const app = express();
 const PORT = 5000;
-const key = '5Ty%ym%=}PESSVGAcLKe:Ck=k+dvh2aUpV6%5u&zu@6d(+hB=6';
-const secret = 'VZx&uy8#!Ce+StDSDp]Bi3M,=.CP[n/qCKT:H62WkX;7qC-.}B';
+const key =
+   process.env.KEY || '5Ty%ym%=}PESSVGAcLKe:Ck=k+dvh2aUpV6%5u&zu@6d(+hB=6';
+const secret =
+   process.env.SECRET || 'VZx&uy8#!Ce+StDSDp]Bi3M,=.CP[n/qCKT:H62WkX;7qC-.}B';
 //Middlewares
 app.use(express.json());
 
@@ -22,14 +24,14 @@ app.use((req, res, next) => {
 });
 app.use('/api', routes);
 app.get('/health', (req, res) => {
-   res.send(`Server is healthy`);
+   res.send(`Server is healthy mode:${process.env.DOMAIN}`);
 });
 app.use((req, res, next) => {
    next(createError(404));
 });
 //Start
 mongoose
-   .connect('mongodb://localhost:27017/sinpe', {
+   .connect('mongodb://mongo:27017/sinpe', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
@@ -38,4 +40,6 @@ mongoose
    .catch((err) => console.log(err));
 app.listen(PORT, () => {
    console.log(`Server has started ...`);
+   console.log(`Secret: ${secret}`);
+   console.log(`Key: ${key}`);
 });

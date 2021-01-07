@@ -8,18 +8,10 @@ services:
     ports:
       - 3000:3000
     container_name: client
+    environment:
+      - REACT_APP_DOMAIN=
     depends_on:
       - api
-  api:
-    build: ./api
-    volumes:
-      - ./api:/api
-      - /api/node_modules
-    ports:
-      - 5000:5000
-    container_name: api
-    depends_on:
-    - db
   db:
       image: mongo
       restart: always
@@ -29,3 +21,19 @@ services:
       ports:
           - 27017:27017
       command: mongod --noauth 
+  api:
+    build: ./api
+    volumes:
+      - ./api:/api
+      - /api/node_modules
+    ports:
+      - 5000:5000
+    container_name: api
+    environment:
+      - SECRET=
+      - KEY=
+    external_links:
+      - mongo
+    depends_on:
+    - db
+

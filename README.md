@@ -10,15 +10,33 @@
 
 ## Configuraciones
 
-Para configurar los headers revisar el archivo repo→api→app.js modifcar las constantes
+Para configurar los headers revisar el docker-compose.yml
 
-```javascript
-const key = '5Ty%ym%=}PESSVGAcLKe:Ck=k+dvh2aUpV6%5u&zu@6d(+hB=6';
+```yaml
+api:
+...
+    environment:
+      - SECRET=<su secreto>
+      - KEY=<su key>
 
-const secret = 'VZx&uy8#!Ce+StDSDp]Bi3M,=.CP[n/qCKT:H62WkX;7qC-.}B';
 ```
 
-## Inicar el proyecto
+Para configurar el dominio hacia donde se debe de hacer la solictud para validar la transacción modificar la variable dentro del archivo docker-compose.yml
+
+```yaml
+client:
+...
+- REACT_APP_DOMAIN=<modificar con el dominio dado por ngrok>
+
+```
+
+## Iniciar el proyecto
+
+Iniciar ngrok en el puerto 5000 para poder dar acceso al teléfono entrando a la carpeta donde se encuentra el ejecutable.
+
+```bash
+./ngrok http 5000
+```
 
 Entrar a la raiz del repositorio y correr el siguiente comando.
 
