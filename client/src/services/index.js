@@ -6,24 +6,29 @@ const secret =
    process.env.REACT_APP_KEY ||
    'VZx&uy8#!Ce+StDSDp]Bi3M,=.CP[n/qCKT:H62WkX;7qC-.}B';
 const validateTransaction = async (comprobante, name) => {
+   console.log(comprobante, name);
    fetch(domain + '/api/transaction', {
       method: 'POST',
       headers: {
-         'Content-type': 'aplication/json',
+         'Content-type': 'application/json',
          'api-key': key,
          'api-secret': secret,
       },
-      body: {
+      body: JSON.stringify({
          comprobante,
          name,
-      },
+      }),
    })
-      .then((res) => {
-         console.log(res);
+      .then(async (res) => {
+         const response = await res.json();
+         alert(
+            'Transacción validada correctamente \n' +
+               JSON.stringify(response, null, 2)
+         );
       })
       .catch((error) => {
-         console.log('Error');
          console.log(error);
+         alert('Error revise el número comprobante');
       });
    return true;
 };

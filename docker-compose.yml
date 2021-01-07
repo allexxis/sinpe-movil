@@ -27,7 +27,6 @@ services:
     build: ./api
     volumes:
       - ./api:/api
-      - /api/node_modules
     ports:
       - 5000:5000
     container_name: api
