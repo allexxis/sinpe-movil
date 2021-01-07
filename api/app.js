@@ -2,6 +2,7 @@ const express = require('express');
 const createError = require('http-errors');
 const routes = require('./routes');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 mongoose.set('useCreateIndex', true);
 //Configuration
@@ -12,6 +13,7 @@ const key =
 const secret =
    process.env.SECRET || 'VZx&uy8#!Ce+StDSDp]Bi3M,=.CP[n/qCKT:H62WkX;7qC-.}B';
 //Middlewares
+app.use(cors());
 app.use(express.json());
 
 //Routes

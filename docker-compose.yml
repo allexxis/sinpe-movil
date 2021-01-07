@@ -10,6 +10,8 @@ services:
     container_name: client
     environment:
       - REACT_APP_DOMAIN=
+      - REACT_APP_KEY=
+      - REACT_APP_SECRET=
     depends_on:
       - api
   db:

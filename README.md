@@ -44,3 +44,6 @@ Entrar a la raiz del repositorio y correr el siguiente comando.
 docker-compose up -d
 ```
 
+## Notas
+
+El uso de ngrok es para pruebas locales en caso de tener un servidor y dominio ngrok es innecesario
