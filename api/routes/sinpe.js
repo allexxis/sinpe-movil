@@ -6,7 +6,7 @@ const createError = require('http-errors');
 router.post('/', async (req, res, next) => {
    const { name, phone, comprobante, amount, details } = req.body;
    if (!name || !phone || !comprobante || !amount || !details) {
-      return next(createError(400, 'Missing parameter'));
+      return next(createError(400, { message: 'Missing parameter' }));
    }
    const message = await new Message({
       name,
@@ -19,7 +19,9 @@ router.post('/', async (req, res, next) => {
       .catch((error) => {
          if (error.code === 11000) {
             return next(
-               createError(400, "Can't recieve duplicate <comprobante>")
+               createError(400, {
+                  message: "Can't recieve duplicate <comprobante>",
+               })
             );
          }
          return next(createError(400));

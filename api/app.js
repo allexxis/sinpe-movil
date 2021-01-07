@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 app.use('/api', routes);
 app.get('/health', (req, res) => {
-   res.send(`Server is healthy mode:${process.env.DOMAIN}`);
+   res.send(`Server is healthy mode: ${process.env.NODE_ENV || 'development'}`);
 });
 app.use((req, res, next) => {
    next(createError(404));
