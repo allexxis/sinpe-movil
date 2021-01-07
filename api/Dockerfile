@@ -2,8 +2,7 @@ FROM node:12-alpine
 
 WORKDIR /api
 
-COPY package.json ./
-COPY package-lock.json ./
+COPY package*.json ./
 
 RUN npm install
 
