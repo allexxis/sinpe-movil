@@ -16,12 +16,6 @@ const App = () => {
                <Checkout />
             </div>
          </div>
-         <div>
-            Design by{' '}
-            <a href="https://codepen.io/darrionr">
-               https://codepen.io/darrionr
-            </a>
-         </div>
       </div>
    );
 };
